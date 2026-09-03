@@ -1,0 +1,6 @@
+# Dummy config for contract tests (no real broker needed)
+bootstrap_servers: "localhost:9092"
+consumer_group: "okw-test"
+auto_offset_reset: "latest"
+value_serializer: "json"
+value_deserializer: "json"

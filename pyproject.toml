@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "robotframework-okw-kafka"
+version = "0.1.0"
+description = "Robot Framework keyword library for Apache Kafka integration testing — produce, consume, and verify messages using the OKW keyword pattern."
+readme = "README.md"
+license = "AGPL-3.0-only"
+requires-python = ">=3.10"
+authors = [
+    {name = "Zoltan Hrabovszki", email = "hrabovszki@googlemail.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Robot Framework",
+    "Framework :: Robot Framework :: Library",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Testing",
+]
+keywords = ["robotframework", "kafka", "testing", "okw", "keyword-driven"]
+dependencies = [
+    "robotframework>=6.0",
+    "confluent-kafka>=2.0",
+    "okw-contract-utils>=0.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Hrabovszki1023/robotframework-okw-kafka"
+Repository = "https://github.com/Hrabovszki1023/robotframework-okw-kafka"
+Documentation = "https://hrabovszki1023.github.io/robotframework-okw-kafka/"
+"Keyword Documentation" = "https://hrabovszki1023.github.io/robotframework-okw-kafka/"
+"Runnable Examples" = "https://github.com/Hrabovszki1023/okw-examples/tree/main/kafka/"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

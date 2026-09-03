@@ -1,0 +1,55 @@
+name: "Stage 2+3: TestPyPI Release + Integration Test"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-publish:
+    name: "Stage 2: Build + Upload to TestPyPI"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          python3 -m venv venv
+          . venv/bin/activate
+          pip install build twine
+
+      - name: Build package
+        run: |
+          . venv/bin/activate
+          python -m build
+
+      - name: Upload to TestPyPI
+        run: |
+          . venv/bin/activate
+          twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.TESTPYPI_TOKEN }}
+
+  integration-test:
+    name: "Stage 3: Integration Test (from TestPyPI)"
+    runs-on: ubuntu-latest
+    needs: build-and-publish
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install from TestPyPI (deps from PyPI)
+        run: |
+          python3 -m venv venv
+          . venv/bin/activate
+          pip install --index-url https://test.pypi.org/simple/ \
+                      --extra-index-url https://pypi.org/simple/ \
+                      robotframework-okw-kafka
+          pip install robotframework-okw-env-docker
+
+      - name: Run integration tests (real Kafka broker)
+        run: |
+          . venv/bin/activate
+          robot --outputdir results/integration tests/integration/kafka_roundtrip.robot
+        env:
+          DOCKER_HOST: tcp://192.168.1.123:2375

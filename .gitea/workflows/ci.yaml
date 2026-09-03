@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  contract-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          python3 -m venv venv
+          . venv/bin/activate
+          pip install -e .
+          pip install pytest
+
+      - name: Run contract tests (stub backend)
+        run: |
+          . venv/bin/activate
+          pytest tests/test_contract.py -v
+
+  integration-test:
+    runs-on: ubuntu-latest
+    needs: contract-test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          python3 -m venv venv
+          . venv/bin/activate
+          pip install -e .
+          pip install robotframework-okw-env-docker
+
+      - name: Run integration tests (real Kafka broker)
+        run: |
+          . venv/bin/activate
+          robot --outputdir results/integration tests/integration/kafka_roundtrip.robot
+        env:
+          DOCKER_HOST: tcp://192.168.1.123:2375

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "robotframework-okw-kafka"
-version = "0.1.0"
+version = "0.1.1"
 description = "Robot Framework keyword library for Apache Kafka integration testing — produce, consume, and verify messages using the OKW keyword pattern."
 readme = "README.md"
 license = "AGPL-3.0-only"
@@ -31,6 +31,7 @@ dependencies = [
     "robotframework>=6.0",
     "confluent-kafka>=2.0",
     "okw-contract-utils>=0.2.0",
+    "PyYAML>=6.0",
 ]
 
 [project.urls]

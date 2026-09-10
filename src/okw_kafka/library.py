@@ -82,7 +82,7 @@ def _resolve_empty(value: str) -> str:
     return value
 
 
-@library(scope="GLOBAL", version="0.1.0")
+@library(scope="GLOBAL", version="0.1.1")
 class OkwKafkaLibrary:
     """OKW Kafka Library for Robot Framework.
 
@@ -91,7 +91,7 @@ class OkwKafkaLibrary:
 
     ROBOT_LIBRARY_SCOPE = "GLOBAL"
     ROBOT_LIBRARY_DOC_FORMAT = "ROBOT"
-    ROBOT_LIBRARY_VERSION = "0.1.0"
+    ROBOT_LIBRARY_VERSION = "0.1.1"
 
     def __init__(self, config_dir: str = "configs", backend: str = "stub"):
         self._config_dir = config_dir

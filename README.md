@@ -94,7 +94,11 @@ value_deserializer: "json"
 
 ## Runnable Examples
 
-[okw-examples/kafka/](https://github.com/Hrabovszki1023/okw-examples/tree/main/kafka/)
+[okw-examples/kafka/](https://github.com/Hrabovszki1023/okw-examples/tree/main/kafka/) — produce, consume, verify, admin keywords.
+
+## Handbuch
+
+[OKW4Robot Handbuch](https://hrabovszki1023.github.io/okw-examples/) — step-by-step guide (German).
 
 ## License
 

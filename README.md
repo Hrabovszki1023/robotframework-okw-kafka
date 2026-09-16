@@ -7,7 +7,7 @@
 Robot Framework keyword library for Apache Kafka integration testing —
 produce, consume, and verify messages using the OKW keyword pattern.
 
-> Deutsche Version: [README_de.md](README_de.md)
+> **Deutsche Version:** [README_de.md](README_de.md)
 
 ## Signal vs. NOISE
 
@@ -101,6 +101,16 @@ value_deserializer: "json"
 
 [OKW4Robot Handbuch](https://hrabovszki1023.github.io/okw-examples/) — step-by-step guide (German).
 
+## AI Test Generation
+
+Test cases can be generated with any LLM (Claude, ChatGPT, Copilot, ...).
+The system prompts for test generation are maintained centrally in
+[`robotframework-okw4robot/prompts/`](https://github.com/Hrabovszki1023/robotframework-okw4robot/tree/main/prompts).
+
+Copy the prompt into your LLM and describe what you want to test in natural language.
+The LLM produces a ready-to-run `.robot` file.
+
 ## License
 
-AGPL-3.0 — see [LICENSE](LICENSE).
+- **Community** (non-commercial): see [LICENSE](LICENSE)
+- **Commercial**: contact the copyright holder

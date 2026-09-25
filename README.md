@@ -7,7 +7,7 @@
 Robot Framework keyword library for Apache Kafka integration testing —
 produce, consume, and verify messages using the OKW keyword pattern.
 
-> **Deutsche Version:** [README_de.md](README_de.md)
+> **Deutsche Version:** [README.de.md](README.de.md)
 
 ## Signal vs. NOISE
 

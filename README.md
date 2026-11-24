@@ -2,7 +2,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/robotframework-okw-kafka.svg)](https://pypi.org/project/robotframework-okw-kafka/)
 [![Python](https://img.shields.io/pypi/pyversions/robotframework-okw-kafka)](https://pypi.org/project/robotframework-okw-kafka/)
-[![License](https://img.shields.io/badge/License-OKW_Community-orange.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 Robot Framework keyword library for Apache Kafka integration testing —
 produce, consume, and verify messages using the OKW keyword pattern.
@@ -112,5 +112,4 @@ The LLM produces a ready-to-run `.robot` file.
 
 ## License
 
-- **Community** (non-commercial): see [LICENSE](LICENSE)
-- **Commercial**: contact the copyright holder
+Apache-2.0. See [LICENSE](LICENSE) for details.

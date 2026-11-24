@@ -1,13 +1,14 @@
 [build-system]
-requires = ["setuptools>=68.0", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "robotframework-okw-kafka"
-version = "0.1.1"
+version = "0.1.2"
 description = "Robot Framework keyword library for Apache Kafka integration testing — produce, consume, and verify messages using the OKW keyword pattern."
 readme = "README.md"
-license = "AGPL-3.0-only"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 authors = [
     {name = "Zoltan Hrabovszki", email = "hrabovszki@googlemail.com"},
